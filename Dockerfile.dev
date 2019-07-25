@@ -10,7 +10,7 @@ rm -rf \
   /tmp/* \
   /var/lib/apt/lists/*
 
-RUN pip3 install watchdog --install-option="--install-scripts=/usr/bin"
+RUN pip3 install watchdog 
 
 # Copy ccextractor
 COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
