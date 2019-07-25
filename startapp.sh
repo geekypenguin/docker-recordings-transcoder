@@ -1,22 +1,23 @@
 #!/usr/bin/with-contenv bash
 if [ ${ENCODER} = "nvidia" ] ; then
-ENCODER_SCRIPT=nvidia
+echo ENCODER_SCRIPT=nvidia >> /scripts/variables.txt
 fi
 if [ ${ENCODER} = "intel" ] ; then
-ENCODER_SCRIPT=intel
+echo ENCODER_SCRIPT=intel >> /scripts/variables.txt
 fi
 if [ ${ENCODER} = "software" ] ; then
-ENCODER_SCRIPT=software
+echo ENCODER_SCRIPT=software >> /scripts/variables.txt
 fi
 if [ ${SUBTITLES} = "0" ] ; then
-ENCODER_SCRIPT_END=.sh
+echo ENCODER_SCRIPT_END=.sh >> /scripts/variables.txt
 fi
 if [ ${SUBTITLES} = "1" ] ; then
-ENCODER_SCRIPT_END=-subtitles.sh
+echo ENCODER_SCRIPT_END=-subtitles.sh >> /scripts/variables.txt
 fi
 if [ ${DELETE_TS} = "1" ] ; then
  echo "rm \"\$1\"" | tee /scripts/*.sh > /dev/null
 fi
+source /scripts/variables.txt
 chmod +x /scripts/*
 exec watchmedo shell-command \
     --patterns="*.ts" \
