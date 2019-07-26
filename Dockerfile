@@ -19,6 +19,7 @@ COPY --from=jellyfin/ffmpeg:latest /usr/local /usr/local/
 # Copy the start script.
 COPY startapp.sh /etc/services.d/autoconvert/run
 COPY /scripts /scripts
+COPY 02-setvariables.sh /etc/cont-init.d/02-setvariables.sh
 
 ENV ENCODER=nvidia \
     SUBTITLES=1 \
