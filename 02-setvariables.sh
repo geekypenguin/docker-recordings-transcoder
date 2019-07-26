@@ -1,20 +1,20 @@
 #!/usr/bin/with-contenv bash
 if [ ${ENCODER} = "nvidia" ] ; then
-export ENCODER_SCRIPT=nvidia 
+echo ENCODER_SCRIPT=nvidia >> /scripts/setvariables.txt
 fi
 if [ ${ENCODER} = "intel" ] ; then
-export ENCODER_SCRIPT=intel 
+echo ENCODER_SCRIPT=intel >> /scripts/setvariables.txt
 fi
 if [ ${ENCODER} = "software" ] ; then
-export ENCODER_SCRIPT=software
+echo ENCODER_SCRIPT=software >> /scripts/setvariables.txt
 fi
 if [ ${SUBTITLES} = "0" ] ; then
-export ENCODER_SCRIPT_END=.sh 
+echo ENCODER_SCRIPT_END=.sh >> /scripts/setvariables.txt
 fi
 if [ ${SUBTITLES} = "1" ] ; then
-export ENCODER_SCRIPT_END=-subtitles.sh
+echo ENCODER_SCRIPT_END=-subtitles.sh >> /scripts/setvariables.txt
 fi
 if [ ${DELETE_TS} = "1" ] ; then
- echo "rm \"\$1\"" | tee /scripts/*.sh > /dev/null
+echo "rm \"\$1\"" | tee /scripts/*.sh > /dev/null
 fi
 chmod +x /scripts/*

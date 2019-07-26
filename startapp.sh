@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+source /scripts/setvariables.txt
 exec watchmedo shell-command \
     --patterns="*.ts" \
     --recursive \
