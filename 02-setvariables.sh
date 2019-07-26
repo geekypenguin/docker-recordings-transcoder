@@ -18,5 +18,11 @@ if [ ${DELETE_TS} = "1" ] ; then
 echo "rm \"\$1\"" | tee /scripts/*.sh > /dev/null
 fi
 chmod +x /scripts/*
-sed -i "s/ENCODER/$ENCODER_SCRIPT/g" /etc/services.d/autoconvert/run
-sed -i "s/END/$ENCODER_SCRIPT_END/g" /etc/services.d/autoconvert/run
+sed -i "s/ENCODER/$ENCODER_SCRIPT/g" /scripts/sample.conf
+sed -i "s/END/$ENCODER_SCRIPT_END/g" /scripts/sample.conf
+sed -i "s/SEDUSER/$PUID/g" /scripts/runas.sh
+sed -i "s/SEDGROUP/$PGID/g" /scripts/runas.sh
+sed -i "s/SEDUMASK/$UMASK/g" /scripts/runas.sh
+sed -i "s/SEDUSER/$PUID/g" /scripts/sample.conf
+sed -i "s/SEDGROUP/$PGID/g" /scripts/sample.conf
+sed -i "s/SEDUMASK/$UMASK/g" /scripts/sample.conf

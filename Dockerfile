@@ -12,6 +12,7 @@ rm -rf \
 
 RUN pip install watchdog --install-option="--install-scripts=/usr/bin"
 
+RUN curl -L -o /sbin/setuser https://raw.githubusercontent.com/phusion/baseimage-docker/master/image/bin/setuser && chmod +x /sbin/setuser
 # Copy ccextractor
 COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 # Copy ffmpeg
@@ -23,4 +24,7 @@ COPY 02-setvariables.sh /etc/cont-init.d/02-setvariables.sh
 
 ENV ENCODER=nvidia \
     SUBTITLES=1 \
-    DELETE_TS=0
+    DELETE_TS=0 \
+    PUID=99 \
+    PGID=100 \
+    UMASK=0000
