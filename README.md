@@ -40,7 +40,6 @@ h264 and mpeg2 or any codec is converted to h265 .mp4 files.  Very good quality 
 
 - ENCODER=custom  
 This options runs your script to convert the .ts video using ffmpeg however you choose. With this option please include your script named "custom.sh" in the mapped /config folder.
-Supports VAAPI hardware transcoding with the environmental variable ENCODER=intel.
 
 - projects used:  
 www.github.com/jlesage/docker-handbrake  
