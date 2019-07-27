@@ -1,6 +1,6 @@
 #!/bin/bash
 date=$(date +"%d-%m-%Y-%H%M")
-LogFile=/config/postProcess.$date.log
+LogFile=/config/log/postProcess.$date.log
 IFS=$(echo -en "\n\b")
 export LD_LIBRARY_PATH=/usr/local/lib
 mkv="$(basename $1)"
@@ -22,3 +22,4 @@ if [ -f "$map/$srt" ] ; then
 rm "$map/$srt"
 fi
 rm "$1".txt
+#SEDIF [ -f "$map/$mp4" ] && [ -s "$map/$mp4" ]; then
