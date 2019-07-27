@@ -1,6 +1,7 @@
 # docker-recordings-transcoder
 
-Watches for .ts files in /watch and converts them to h265 .mp4 files automatically.  Use at your own risk.
+Watches for .ts files in /watch and converts them to h265 .mp4 files automatically.  
+Tested with Plex and Emby recordings. Use at your own risk.
 
 Example run
 ```

@@ -23,5 +23,5 @@ ENV ENCODER=nvidia \
     DELETE_TS=0 \
     PUID=99 \
     PGID=100 \
-    UMASK=0000 \
+    UMASK=000 \
     AUTOMATED_CONVERSION_FORMAT="mp4"
