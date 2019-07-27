@@ -30,4 +30,4 @@ sed -i "s/SEDUMASK/$UMASK/g" /etc/cont-init.d/10-autoconvertor.sh
 sed -i "s/SEDUSER/$PUID/g" /etc/services.d/autovideoconverter/run
 sed -i "s/SEDGROUP/$PGID/g" /etc/services.d/autovideoconverter/run
 sed -i "s/SEDUMASK/$UMASK/g" /etc/services.d/autovideoconverter/run
-ln -s /watch /output
+mkdir /output
