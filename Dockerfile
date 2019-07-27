@@ -18,7 +18,7 @@ COPY --from=jellyfin/ffmpeg:latest /usr/local /usr/local/
 COPY rootfs/ /
 COPY /scripts /scripts
 RUN rm /etc/cont-init.d/10-adduser
-ENV ENCODER=nvidia \
+ENV ENCODER=software \
     SUBTITLES=1 \
     DELETE_TS=0 \
     PUID=99 \
