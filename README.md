@@ -5,19 +5,19 @@ Watches for .ts files in /watch and converts them to h265 .mp4 files automatical
 Example run
 ```
 docker run -d \
-    --name=recordings-transcoder \
+    --name=recordings-converter \
     -v /home/user/videos:/watch:rw \
     -v /docker/appdata/recordings-transcoder:/config:rw \
-    -e ENCODER=software
-    -e SUBTITLES=0
-    -e DELETE_TS=0
-    PUID=99
-    PGID=100
-    UMASK=000
-    djaydev/recordings-transcoder
+    -e ENCODER=software \
+    -e SUBTITLES=0 \
+    -e DELETE_TS=0 \
+    -e PUID=99 \
+    -e PGID=100 \
+    -e UMASK=000 \
+    djaydev/recordings-converter
 ```
 Where:
-- `/docker/appdata/recordings-transcoder`: This is where the application stores its configuration, log and any files needing persistency.  Location to add a custom script for video conversion named custom.sh
+- `/docker/appdata/recordings-converter`: This is where the application stores its configuration, log and any files needing persistency.  Location to add a custom script for video conversion named custom.sh
 - `/home/user/videos`: This location contains .ts files that need converting.  
 - `ENCODER`: options are "intel" "nvidia" "software" "custom" explained below
 - `SUBTITLES`: Include subtitles from the original .ts, 0 = no, 1 = yes
