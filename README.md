@@ -43,8 +43,8 @@ This options runs your script to convert the .ts video using ffmpeg however you 
 Supports VAAPI hardware transcoding with the environmental variable ENCODER=intel.
 
 - projects used:  
-www.github.com/jlesage/docker-handbrake
-www.github.com/ffmpeg/ffmpeg
-www.github.com/CCExtractor/ccextractor
-www.github.com/linuxserver/docker-baseimage-ubuntu
+www.github.com/jlesage/docker-handbrake  
+www.github.com/ffmpeg/ffmpeg  
+www.github.com/CCExtractor/ccextractor  
+www.github.com/linuxserver/docker-baseimage-ubuntu  
 www.github.com/jellyfin/jellyfin-ffmpeg
