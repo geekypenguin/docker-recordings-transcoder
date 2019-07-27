@@ -10,5 +10,5 @@ srt="${mkv%.*}.srt"
 srt="$(basename $srt)"
 exec 3>&1 1>>${LogFile} 2>&1
 ccextractor "$1" -o "$map/$srt"
-ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -i "$1" -i "$map/$srt" -vf 'format=nv12|vaapi,hwupload,deinterlace_vaapi' -c:v hevc_vaapi -brand mp42 -ac 2 -c:a aac -b:a 192k -c:s mov_text "$map/$mp4"
+ffmpeg -i "$1" -i "$map/$srt" -c:v libx265 -brand mp42 -preset medium -x265-params crf=22 -ac 2 -c:a aac -b:a 192k -ac 2 -c:a aac -b:a 192k -c:s mov_text "$map/$mp4"
 #SEDIF [ -f "$map/$mp4" ] && [ -s "$map/$mp4" ]; then
