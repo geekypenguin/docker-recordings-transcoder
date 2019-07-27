@@ -49,7 +49,7 @@ Edit your go file to include:
 modprobe i915, save and reboot, then  
 add --device=/dev/dri to "extra parameters" (switch on advanced view)  
 
-Help with Nvidia: https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/
+Help with Nvidia: https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/  
 Nvidia GPU Use  
 Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and  
 add --runtime=nvidia to "extra parameters" (switch on advanced view) and  
