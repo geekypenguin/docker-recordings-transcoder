@@ -1,4 +1,4 @@
-# djaydev/autoconvert
+# djaydev/recordings-converter
 
 FROM lsiobase/ubuntu:bionic
 RUN apt update && \

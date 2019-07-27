@@ -18,6 +18,9 @@ fi
 if [ $codec_name = "MPEG-2V" ] ; then
 ffmpeg -hwaccel cuvid -c:v mpeg2_cuvid -deint 2 -drop_second_field 1 -surfaces 10 -i "$1" -c:v hevc_nvenc -preset:v hp -level:v 5.0 -rc:v vbr_hq -rc-lookahead:v 32 -brand mp42 -ac 2 -c:a aac -b:a 192k "$map/$mp4"
 fi
+if [ $codec_name != "AVC" ] && [ $codec_name != "MPEG-2V" ] ; then
+ffmpeg -hwaccel nvdec -i "$1" -c:v hevc_nvenc -preset:v hp -level:v 5.0 -rc:v vbr_hq -rc-lookahead:v 32 -brand mp42 -ac 2 -c:a aac -b:a 192k "$map/$mp4"
+fi
 if [ -f "$map/$srt" ] ; then
 rm "$map/$srt"
 fi
