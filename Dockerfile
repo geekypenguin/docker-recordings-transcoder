@@ -17,7 +17,7 @@ COPY --from=jellyfin/ffmpeg:latest /usr/local /usr/local/
 # Copy the start scripts.
 COPY rootfs/ /
 COPY /scripts /scripts
-RUN rm /etc/cont-init.d/10-adduser
+RUN rm /etc/cont-init.d/10-adduser && curl -sL https://raw.githubusercontent.com/linuxserver/docker-plex/master/root/etc/cont-init.d/50-gid-video -o /etc/cont-init.d/50-gid-video
 ENV ENCODER=software \
     SUBTITLES=1 \
     DELETE_TS=0 \
