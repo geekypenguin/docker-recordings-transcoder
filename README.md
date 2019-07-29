@@ -38,7 +38,7 @@ This options runs a script to convert the .ts video using ffmpeg with software e
 Tries to convert any codec to h265 .mp4 files.
 
 - ENCODER=custom  
-This options runs your script to convert the .ts video using ffmpeg however you choose. With this option please include your script named "custom.sh" in the mapped /config folder.  
+This option runs your script to convert the .ts video using ffmpeg however you choose. With this option please include your script named "custom.sh" in the mapped /config folder.  
 
 ## Unraid Users:  
 Help with Intel: https://forums.unraid.net/topic/77943-guide-plex-hardware-acceleration-using-intel-quick-sync/  
