@@ -4,8 +4,8 @@ Watches for .ts files in /watch and converts them to h265 .mp4 files automatical
 Tested with Plex and Emby recordings.
 
 Example run
-```
-docker run -d \
+
+```docker run -d \
     --name=recordings-converter \
     -v /home/user/videos:/watch:rw \
     -v /docker/appdata/recordings-transcoder:/config:rw \
@@ -17,7 +17,9 @@ docker run -d \
     -e UMASK=000 \
     djaydev/recordings-converter
 ```
+
 Where:
+
 - `/docker/appdata/recordings-converter`: This is where the application stores its configuration, log and any files needing persistency.  Location to add a custom script for video conversion named custom.sh
 - `/home/user/videos`: This location contains .ts files that need converting.  
 - `ENCODER`: options are "intel" "nvidia" "software" "custom" explained below
@@ -40,20 +42,22 @@ Tries to convert any codec to h265 .mp4 files.
 - ENCODER=custom  
 This option runs your script to convert the .ts video using ffmpeg however you choose. With this option please include your script named "custom.sh" in the mapped /config folder.  
 
-## Unraid Users:  
-Help with Intel: https://forums.unraid.net/topic/77943-guide-plex-hardware-acceleration-using-intel-quick-sync/  
+## Unraid Users
+
+Help with Intel: <https://forums.unraid.net/topic/77943-guide-plex-hardware-acceleration-using-intel-quick-sync/>  
 Intel GPU Use  
 Edit your go file to include:  
 modprobe i915, save and reboot, then  
 add --device=/dev/dri to "extra parameters" (switch on advanced view)  
 
-Help with Nvidia: https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/  
+Help with Nvidia: <https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/>  
 Nvidia GPU Use  
 Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and  
 add --runtime=nvidia to "extra parameters" (switch on advanced view) and  
 copy your GPU UUID to NVIDIA_VISIBLE_DEVICES.  
 
-## projects used:  
+## projects used
+
 www.github.com/jlesage/docker-handbrake  
 www.github.com/ffmpeg/ffmpeg  
 www.github.com/CCExtractor/ccextractor  
