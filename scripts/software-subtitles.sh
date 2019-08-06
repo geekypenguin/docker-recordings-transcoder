@@ -15,4 +15,4 @@ ffmpeg -i "$1" -i "$map/$srt" -c:v libx265 -brand mp42 -preset medium -x265-para
 else echo "*** CCextractor couldn't find Closed Captions. No Subtitles will be added...***"
 ffmpeg -i "$1" -c:v libx265 -brand mp42 -preset medium -x265-params crf=22 -ac 2 -c:a aac -b:a 192k -ac 2 -c:a aac -b:a 192k "$map/$mp4"
 fi
-#SEDIF [ -f "$map/$mp4" ] && [ -s "$map/$mp4" ]; then
+#SEDIF [ -f "$map/$mp4" ] && [ -s "$map/$mp4" ] ; then
