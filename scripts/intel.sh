@@ -13,8 +13,8 @@ exec 3>&1 1>>${LogFile} 2>&1
 mediainfo --Inform="Video;codec_name=%Codec%" "$1" >> "$1".txt
 source "$1".txt
 if [ $codec_name = "AVC" ] ; then
-ffmpeg -i "$1" -c:v copy -ac 2 -c:a aac -b:a 192k "$map/$mp4"
-else ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -i "$1" -vf 'format=nv12|vaapi,hwupload,deinterlace_vaapi' -c:v hevc_vaapi -brand mp42 -ac 2 -c:a aac -b:a 192k "$map/$mp4"
+ffmpeg -i "$1" -c:v copy -ac 2 -c:a libfdk_aac -b:a 192k "$map/$mp4"
+else ffmpeg -hwaccel vaapi -vaapi_device /dev/dri/renderD128 -i "$1" -vf 'format=nv12|vaapi,hwupload,deinterlace_vaapi' -c:v hevc_vaapi -brand mp42 -ac 2 -c:a libfdk_aac -b:a 192k "$map/$mp4"
 fi
 if [ -f "$map/$srt" ] ; then
 rm "$map/$srt"

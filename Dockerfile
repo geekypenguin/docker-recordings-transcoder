@@ -2,7 +2,12 @@
 
 FROM lsiobase/ubuntu:bionic
 RUN apt update && \
-apt install --no-install-recommends coreutils findutils expect tcl8.6 mediainfo libfreetype6 libc6 libutf8proc2 libtesseract4 libpng16-16 liblept5 libva2 libva-drm2 i965-va-driver expat libgomp1 -y && \
+apt install --no-install-recommends \
+    coreutils findutils expect tcl8.6 \
+    mediainfo libfreetype6 libc6 libutf8proc2 \
+    libtesseract4 libpng16-16 liblept5 libva2 \
+    libva-drm2 i965-va-driver expat libgomp1 \
+    libxcb1 libxcb-shape0 -y && \
 # cleanup
 apt-get autoremove -y && \
 apt-get clean && \
@@ -13,7 +18,8 @@ rm -rf \
 # Copy ccextractor
 COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 # Copy ffmpeg
-COPY --from=jellyfin/ffmpeg:latest /usr/local /usr/local/
+COPY --from=djaydev/ffmpeg /usr/local/ /usr/local/
+
 # Copy the start scripts.
 COPY rootfs/ /
 COPY /scripts /scripts
