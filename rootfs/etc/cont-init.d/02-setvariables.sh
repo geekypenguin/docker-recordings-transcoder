@@ -13,9 +13,7 @@ sed -i "s/scripts\/ENCODEREND/config\/custom.sh/g" /etc/services.d/autovideoconv
 fi
 if [ ${SUBTITLES} = "0" ] ; then
 ENCODER_SCRIPT_END=.sh
-fi
-if [ ${SUBTITLES} = "1" ] ; then
-ENCODER_SCRIPT_END=-subtitles.sh
+else ENCODER_SCRIPT_END=-subtitles.sh
 fi
 if [ ${DELETE_TS} = "1" ] ; then
 sed -i "s/#SEDIF/if/g" /scripts/$ENCODER_SCRIPT$ENCODER_SCRIPT_END

@@ -2,6 +2,7 @@
 date=$(date +"%d-%m-%Y-%H%M")
 LogFile=/config/log/postProcess.$date.log
 IFS=$(echo -en "\n\b")
+export LD_LIBRARY_PATH=/usr/local/lib
 mkv="$(basename $1)"
 map="$(dirname $1)"
 mp4="${mkv%.*}.mp4"
