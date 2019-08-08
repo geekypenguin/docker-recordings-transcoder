@@ -18,7 +18,7 @@ rm -rf \
 # Copy ccextractor
 COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 # Copy ffmpeg
-COPY --from=djaydev/ffmpeg /usr/local/ /usr/local/
+COPY --from=lsiobase/ffmpeg:bin / /
 
 # Copy the start scripts.
 COPY rootfs/ /
