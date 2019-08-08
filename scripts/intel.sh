@@ -20,4 +20,4 @@ if [ -f "$map/$srt" ] ; then
 rm "$map/$srt"
 fi
 rm "$1".txt
-#SEDIF [ -f "$map/$mp4" ] && [ -s "$map/$mp4" ] ; then
+#SEDIF

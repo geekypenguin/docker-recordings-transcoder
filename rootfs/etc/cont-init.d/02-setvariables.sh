@@ -16,8 +16,7 @@ ENCODER_SCRIPT_END=.sh
 else ENCODER_SCRIPT_END=-subtitles.sh
 fi
 if [ ${DELETE_TS} = "1" ] ; then
-sed -i "s/#SEDIF/if/g" /scripts/$ENCODER_SCRIPT$ENCODER_SCRIPT_END
-echo -e "rm \"\$1\"\nfi" | tee -a /scripts/*.sh > /dev/null
+sed -i "s/#SEDIF/if [ -f \"\$map\/\$mp4\" ] \&\& [ -s \"\$map\/\$mp4\" ] ; then\nrm \"\$1\"\nfi/g" /scripts/$ENCODER_SCRIPT$ENCODER_SCRIPT_END
 fi
 chmod +x /scripts/*
 sed -i "s/ENCODER/$ENCODER_SCRIPT/g" /etc/services.d/autovideoconverter/run
