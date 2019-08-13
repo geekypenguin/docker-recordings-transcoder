@@ -44,13 +44,13 @@ This option runs your script to convert the .ts video using ffmpeg however you c
 
 ## Unraid Users
 
-Help with Intel: <https://forums.unraid.net/topic/77943-guide-plex-hardware-acceleration-using-intel-quick-sync/>  
+**[Help with Intel](https://forums.unraid.net/topic/77943-guide-plex-hardware-acceleration-using-intel-quick-sync/)**  
 Intel GPU Use  
 Edit your go file to include:  
 modprobe i915, save and reboot, then  
 add --device=/dev/dri to "extra parameters" (switch on advanced view)  
 
-Help with Nvidia: <https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/>  
+**[Help with Nvidia](https://forums.unraid.net/topic/77813-plugin-linuxserverio-unraid-nvidia/)**  
 Nvidia GPU Use  
 Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and  
 add --runtime=nvidia to "extra parameters" (switch on advanced view) and  
