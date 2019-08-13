@@ -5,7 +5,8 @@ Tested with Plex and Emby recordings.
 
 Example run
 
-```docker run -d \
+```shell
+docker run -d \
     --name=recordings-converter \
     -v /home/user/videos:/watch:rw \
     -v /docker/appdata/recordings-transcoder:/config:rw \
