@@ -18,7 +18,7 @@ rm -rf \
 # Copy ccextractor
 COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 # Copy ffmpeg
-COPY --from=jrottenberg/ffmpeg:snapshot-nvidia /usr/local/ /usr/local/
+COPY --from=djaydev/ffmpeg /usr/local/ /usr/local/
 
 # Copy the start scripts.
 COPY rootfs/ /
