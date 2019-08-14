@@ -1,4 +1,4 @@
-# djaydev/recordings-converter
+n# djaydev/recordings-converter
 
 FROM lsiobase/ubuntu:bionic
 RUN apt update && \
@@ -18,7 +18,7 @@ rm -rf \
 # Copy ccextractor
 COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 # Copy ffmpeg
-COPY --from=djaydev/ffmpeg /usr/local/ /usr/local/
+COPY --from=geekypenguin/ffmpeg /usr/local/ /usr/local/
 
 # Copy the start scripts.
 COPY rootfs/ /
