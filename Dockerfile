@@ -7,7 +7,17 @@ apt install --no-install-recommends \
     mediainfo libfreetype6 libc6 libutf8proc2 \
     libtesseract4 libpng16-16 liblept5 libva2 \
     libva-drm2 i965-va-driver expat libgomp1 \
-    libxcb1 libxcb-shape0 -y && \
+    libxcb1 libxcb-shape0 \
+    autoconf libtool git build-essential libargtable2-dev libavformat-dev libsdl1.2-dev -y && \
+    
+ # Clone Comskip
+    cd /opt && \
+    git clone git://github.com/erikkaashoek/Comskip && \
+    cd Comskip && \
+    ./autogen.sh && \
+    ./configure && \
+    make && \
+ 
 # cleanup
 apt-get autoremove -y && \
 apt-get clean && \
