@@ -8,7 +8,7 @@ apt install --no-install-recommends \
     libtesseract4 libpng16-16 liblept5 libva2 \
     libva-drm2 i965-va-driver expat libgomp1 \
     libxcb1 libxcb-shape0 \
-    autoconf libtool git build-essential libargtable2-dev libavformat-dev libsdl1.2-dev -y && \
+    autoconf libtool git build-essential libargtable2-dev libavformat-dev libsdl1.2-dev automake -y && \
     
  # Clone Comskip
     cd /opt && \
