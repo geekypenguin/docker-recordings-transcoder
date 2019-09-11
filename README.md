@@ -64,3 +64,4 @@ www.github.com/ffmpeg/ffmpeg
 www.github.com/CCExtractor/ccextractor  
 www.github.com/linuxserver/docker-baseimage-ubuntu  
 www.github.com/jellyfin/jellyfin-ffmpeg
+www.github.com/erikkaashoek/Comskip
